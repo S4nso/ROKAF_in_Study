@@ -30,3 +30,6 @@ def solution(numbers):
         return answer
     else:
         return "0"
+'''
+테스트 11 응애
+'''
