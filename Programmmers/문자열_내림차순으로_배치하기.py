@@ -15,7 +15,20 @@ str은 길이 1 이상인 문자열입니다.
 "Zbcdefg"      "gfedcbZ"
 '''
 
+'''
+1차 시도
+def solution(s):
+    
+    return s[::-1] 
+    
+    테스트는 되는데 제출하면 통과안됨 . 뒤집기 X 정렬 O
+'''
 
 def solution(s):
     
-    return s[::-1]
+    str = list(s) #문자열을 리스트로
+    
+    str.sort(reverse = True) # 큰것부터 작은순 reverse로 역순정렬 알파벳=아스키코드값 비교해서 정렬하는 것으로 알고있음.
+    
+    s="".join(str) #리스트를 문자열로 구분점없이
+    return s
