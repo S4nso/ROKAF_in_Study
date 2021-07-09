@@ -64,3 +64,45 @@ no	            new_id	                         result
 
 
 '''
+
+
+
+
+import re #정규표현식 https://wikidocs.net/4308 참조
+def solution(new_id):
+    
+    # 7단계 검사 과정 + 변화 과정 
+    
+    #1단계
+    new_id = new_id.lower()
+    
+    #2단계
+    new_id = re.sub('[\~\!\@\#\$\%\^\&\*\(\)\=\+\[\{\]\}\:\?\,\<\>\/]', '', new_id)
+    
+    #3단계
+    new_id = re.sub('.{2,15}','.',new_id)
+    
+    #4단계
+    while(new_id[0]=='.' or new_id[-1]=='.'):
+        
+        if new_id[0] == '.':
+            new_id = new_id.replace('.',"",1)
+            
+        elif new_id[-1]=='.':
+            new_id = new_id.replace('.',"",len(new_id))
+            
+    #5단계
+    if new_id == "":
+        new_id = "a"
+    
+    #6단계
+    if len(new_id) >= 16:
+        new_id = new_id[0:14]
+        while(new_id[-1]=='.'):
+            new_id = new_id.replace('.',"",len(new_id))
+        
+    #7단계
+    while(len(new_id)<=2):
+        new_id += new_id[-1]
+        
+    return new_id
