@@ -68,6 +68,7 @@ no	            new_id	                         result
 
 
 ################수정 필요###################
+
 import re #정규표현식 https://wikidocs.net/4308 참조
 def solution(new_id):
     
@@ -84,13 +85,11 @@ def solution(new_id):
         new_id = new_id.replace('..', '.')
     
     #4단계
-    while(new_id[0]=='.' or new_id[-1]=='.'):
-        
-        if new_id[0] == '.':
-            new_id = new_id.replace('.',"",1)
+    if new_id[0] == '.':
+        new_id = new_id[1:]
             
-        elif new_id[-1]=='.':
-            new_id = new_id.replace('.',"",len(new_id))
+    elif new_id[-1]=='.':
+        new_id = new_id[:-1]
             
     #5단계
     if new_id == '':
@@ -103,11 +102,10 @@ def solution(new_id):
             new_id = new_id[:-1]
         
     #7단계
-    if len(new_id) <= 2:
-        new_id = new_id[0] + new_id[-1] * (2-len(new_id))
+    while(len(new_id) < 3):
+        new_id += new_id[-1]
         
     return new_id
-
 
 
 
