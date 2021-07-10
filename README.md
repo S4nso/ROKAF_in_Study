@@ -3,7 +3,10 @@
 ***
 
 ### 군대 안에서 활동하기.
+`
+<div id="count">
 
+</div>
 <script>
 var dday = new Date("January 11, 2023, 0:00:00").getTime();
 
@@ -18,7 +21,7 @@ setInterval(function() {
   document.getElementById("count").innerHTML = "D-DAY까지 " + day + "일 " + hour + "시간 " + min + "분 " + sec + "초 남았습니다.";
 }, 1000);
 </script>
-
+`
 **+ 군 장병 SW 해커톤 준비 中 (국방 오픈소스 아카데미)**
 
 
