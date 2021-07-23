@@ -13,12 +13,15 @@ for i in range(n):
 a.sort()
 b.sort()
 for i in range (n - 1):
-    if a[i+1][0] == a[i][0] and a[i+1][1] > a[i][1]:
+    if a[i+1][0] == a[i][0] and a[i+1][1] > a[i][1]: # 같은 x 축에서 y가 더크면 y추가
         y.add(a[i][1] + 1)
     else:
-        x.add(a[i][0] + 1)
+        x.add(a[i][0] + 1)     #아니면 x
 print(len(x) + len(y))
 for i in x:
     print("x " + str(i))
 for i in y:
     print("y " + str(i))
+
+  
+  
