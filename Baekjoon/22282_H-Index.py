@@ -1,5 +1,5 @@
 #! /bin/usr/python3
-
+import sys
 def solution(citations):
     answer = 0
     
@@ -16,8 +16,8 @@ def solution(citations):
 a = int(input())
 n = list()
 for i in range(a):
-    n.append(int(input()))
+    n.append(int(sys.stdin.readline()))
 
 print(solution(n))
 
-#똑같은 문제 but 시간초과
+#똑같은 문제 but sys모듈 사용해야함.
