@@ -2,6 +2,28 @@
 import sys
 import math
 
+n = int(input())
+a = list(map(int, input().split()))
+a_sort = [i for i in a]
+a_sort.sort()
+p = []
+
+for i in a:
+    p.append(a_sort.index(i))
+    a_sort[a_sort.index(i)] = -1
+
+re = [i for i in p]
+
+for re in re:
+    print(str(re)+' ')
+
+
+'''--------------------------------------------'''
+#! /bin/usr/python3
+
+import sys
+import math
+
 A_size = int(sys.stdin.readline())
 A = sys.stdin.readline().replace("\n", "").split(' ')
 A = [int(i) for i in A]
